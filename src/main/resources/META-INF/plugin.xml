@@ -1,0 +1,33 @@
+<idea-plugin>
+
+    <version>
+        1.0.0
+    </version>
+
+    <id>com.github.useriq</id>
+    <name>Custom parameter</name>
+    <vendor email="useriq@mail.ru" url="https://github.com/useriq/">Mikhailov</vendor>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <project-components>
+        <component>
+            <implementation-class>com.github.useriq.customParameter.HostsComponent</implementation-class>
+        </component>
+    </project-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <runConfigurationExtension implementation="com.github.useriq.customParameter.IdeaRunConfigurationExtension" id="envfileIdea"/>
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>com.github.useriq.customParameter.MyPluginRegistration</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
